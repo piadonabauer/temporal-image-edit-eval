@@ -1,15 +1,18 @@
 # Learning Temporal Relations for Evaluating Instruction-Guided Image Editing
 
-This repository contains the implementation of the thesis **"Learning Temporal Relations for Evaluating Instruction-Guided Image Editing"**, a framework that adapts spatio-temporal modeling techniques from video understanding to evaluate instruction-guided image edits.
+This repository contains the implementation of the research **"Learning Temporal Relations for Evaluating Instruction-Guided Image Editing"**, a framework that adapts spatio-temporal modeling techniques from video understanding to evaluate instruction-guided image edits.
 
 ## Overview
 
 <p align="center">
-    <img src="https://github.com/piadonabauer/thesis-edit-evaluation/blob/main/data/examples/thesis_images/overview.png?raw=true" alt="Pipeline" width="300"/>
+    <img src="data/examples/research_images/overview.png" alt="Pipeline" width="300"/>
 </p>
 
 ### **Abstract**
-*Image editing tools are becoming increasingly popular for creative and professional workflows. While users can manually edit images, AI-based tools now allow text-based instructions to guide image edits, often generating multiple variations for users to select from. However, evaluating instruction-guided image editing remains a challenge due to the lack of established frameworks. Traditional automated metrics focus on overall image quality rather than execution fidelity, often failing to align with human judgment. This thesis proposes a novel evaluation approach that leverages spatio-temporal relationships from video understanding to analyze changes between edited image pairs and their corresponding instructions. A key component is a human annotation study, which aligns the evaluation metric with human perception. While experimental results indicate moderate retrieval performance, the method struggles with fine-grained distinctions. Correlation with human ratings is low overall but improves significantly for well-defined edits, specific editing types, and high-quality training data. These findings highlight the potential of this approach in structured scenarios while emphasizing its limitations as a universal evaluation metric. This research aims to lay the groundwork for a systematic, human-centered evaluation framework for image editing, fostering further discussion and innovation in the field.*
+*Despite rapid progress in image editing models, there remains no standard human-aligned framework for evaluating instruction-guided edits. Current automated visual metrics focus on pixel-level fidelity rather than whether an edit follows the instruction, hence frequently struggle to capture semantic alignment between visual edits and user intent, creating a critical research gap. Reliable evaluation is crucial: inadequate metrics can misrepresent model performance and hinder the development of consistent evaluation standards. To address this, we conceptualise instruction-
+guided image editing as a temporal reasoning problem in vision-language models. Humans can perceive edits naturally as before-after transitions, changes over time rather than static differences. We use a video-based CLIP model
+to encode original and edited images as a short two-frame sequence, capturing the dynamics of visual change. A user study shows that while overall correlation with human judgments is moderate (ρ = 0.12), alignment improves (i) for edits that are clearly successful or unsuccessful (ρ = 0.42), (ii) for specific edit types (e.g., object addition/removal), and (iii) with more training data. These findings suggest that temporal reasoning is a promising direction for resolving the discrepancy between automated
+visual metrics and human perception.*
 
 ---
 
@@ -78,7 +81,7 @@ OPENAI_API_KEY=x
 
 ### **Datasets**
 
-Dataset preparation instructions are provided in a separate [README](https://github.com/piadonabauer/thesis-edit-evaluation/blob/main/data/DATASET.md). The required textual data files are included in the repository, except for the images, which must be retrieved and processed into video format.
+Dataset preparation instructions are provided in a separate [README](data/DATASET.md). The required textual data files are included in the repository, except for the images, which must be retrieved and processed into video format.
 
 
 ## **ViFi-CLIP**
@@ -99,7 +102,7 @@ Other models can be reproduced using the fine-tuning instructions below.
 To reproduce a model (e.g., ViT-B/16, 2 frames, trained on HumanEdit, fold 1):
 
 1. Navigate to the corresponding folder:
-`thesis-edit-evaluation/ViFi-CLIP/output/crossvalidation/vitb16_2_humanedit_freeze_none/fold`
+`temporal-relation-eval/ViFi-CLIP/output/crossvalidation/vitb16_2_humanedit_freeze_none/fold`
 
 2. Adjust paths in the .yaml configuration file.
 
@@ -112,7 +115,8 @@ python -m torch.distributed.run --nproc_per_node=1 main.py \
 --output output/crossvalidation/vitb16_2_humanedit_freeze_none/fold1
 ```
 
-For more details, refer to the official ViFi-CLIP [Training Guide](https://github.com/piadonabauer/thesis-edit-evaluation/blob/main/ViFi-CLIP/docs/TRAIN.md).
+
+For more details, refer to the official ViFi-CLIP [Training Guide](ViFi-CLIP/docs/TRAIN.md).
 
 
 ## **Repository Structure**
