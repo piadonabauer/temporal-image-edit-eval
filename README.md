@@ -1,6 +1,6 @@
-# Learning Temporal Relations for Evaluating Instruction-Guided Image Editing
+# Learning Temporal Relations for Evaluating Instruction-Guided Image Editing in Vision-Language Models
 
-This repository contains the implementation of the research **"Learning Temporal Relations for Evaluating Instruction-Guided Image Editing"**, a framework that adapts spatio-temporal modeling techniques from video understanding to evaluate instruction-guided image edits.
+This repository contains the implementation of the research **"Learning Temporal Relations for Evaluating Instruction-Guided Image Editing in Vision-Language Models"**, a framework that adapts spatio-temporal modeling techniques from video understanding to evaluate instruction-guided image edits.
 
 ## Overview
 
