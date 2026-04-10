@@ -31,7 +31,7 @@ Most analyses are performed in Jupyter notebooks, with required libraries instal
 2. **For data analysis**
 
 #### **(1) Setup for Fine-tuning ViFi-CLIP**
-The official ViFi-CLIP installation guide can be followed: [Installation ViFi-CLIP](https://github.com/piadonabauer/thesis-edit-evaluation/blob/main/ViFi-CLIP/docs/INSTALL.md).  
+The official ViFi-CLIP installation guide can be followed: [Installation ViFi-CLIP](ViFi-CLIP/docs/INSTALL.md).  
 
 The guide describes executing the following commands:
 
@@ -102,7 +102,7 @@ Other models can be reproduced using the fine-tuning instructions below.
 To reproduce a model (e.g., ViT-B/16, 2 frames, trained on HumanEdit, fold 1):
 
 1. Navigate to the corresponding folder:
-`temporal-relation-eval/ViFi-CLIP/output/crossvalidation/vitb16_2_humanedit_freeze_none/fold`
+`/ViFi-CLIP/output/crossvalidation/vitb16_2_humanedit_freeze_none/fold`
 
 2. Adjust paths in the .yaml configuration file.
 
